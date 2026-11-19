@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Phone Activity</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <div class="top">
+    <h1>Phone activity</h1>
+    <div class="controls">
+      <div class="seg" id="range" role="group" aria-label="Date range">
+        <button data-d="1">Today</button>
+        <button data-d="7" class="on">7 days</button>
+        <button data-d="30">30 days</button>
+      </div>
+      <button id="refresh">Refresh</button>
+      <button id="connect">Connect</button>
+    </div>
+  </div>
+  <nav id="tabs">
+    <button data-t="overview" class="on">Overview</button>
+    <button data-t="apps">App usage</button>
+    <button data-t="screen">Screen time</button>
+    <button data-t="device">Device &amp; calendar</button>
+  </nav>
+</header>
+
+<main>
+  <p id="msg" class="msg" role="status"></p>
+  <div id="view"></div>
+</main>
+
+<dialog id="dlg">
+  <form method="dialog" id="form">
+    <h2>Connect to your data</h2>
+    <p class="hint">Stored only in this browser. Never put the token in the website's code.</p>
+    <label>Web App URL <input id="url" type="url" placeholder="https://script.google.com/macros/s/…/exec" required></label>
+    <label>Secret token <input id="token" type="password" autocomplete="off" required></label>
+    <div class="row">
+      <button type="button" id="clear">Forget</button>
+      <button type="button" id="cancel">Cancel</button>
+      <button type="submit" class="primary">Save and load</button>
+    </div>
+  </form>
+</dialog>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
